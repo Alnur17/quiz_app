@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:quiz_app/controller/quiz_controller.dart';
 
 import 'Screens/home_screen.dart';
 
@@ -12,14 +14,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    Get.put(QuizController());
+    return GetMaterialApp(
       title: 'Quiz App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  const HomeScreen(),
+      home:   HomeScreen(),
     );
   }
 }
