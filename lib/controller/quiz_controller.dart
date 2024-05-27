@@ -15,7 +15,6 @@ class QuizController extends GetxController {
         List<dynamic> data = json.decode(response.body)['trivia_categories'];
         categoryItemList.value =
             data.map((json) => CategoryModel.fromJson(json)).toList();
-        print(categoryItemList);
       } else {
         throw Exception('Failed to load news');
       }

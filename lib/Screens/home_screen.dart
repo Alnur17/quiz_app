@@ -16,10 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   QuizController quizController = Get.find<QuizController>();
-
-  late int selectedCategory;
-
-  late String selectedMode = '';
+  
 
   @override
   void initState() {
@@ -31,8 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: background,
-        body: Obx(() {
+      backgroundColor: background,
+      body: Obx(
+        () {
           if (quizController.categoryItemList.isEmpty) {
             return const Center(
               child: CircularProgressIndicator(
@@ -66,7 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             );
           }
-        }));
+        },
+      ),
+    );
   }
 
   void bottomSheetForSelections(BuildContext context) {
@@ -82,7 +82,9 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.back();
+                  },
                   child: const Icon(Icons.close),
                 ),
                 const Text(
@@ -92,6 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 16),
                 Wrap(
                   children: quizController.categoryItemList.map((category) {
+                    
                     return Padding(
                       padding: const EdgeInsets.only(left: 4, right: 4),
                       child: ChoiceChip(
@@ -102,8 +105,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         selected: false,
-                        onSelected: (bool selected) {
-                          selectedCategory = category.id;
+                        onSelected: (bool value) {
+
                         },
                         backgroundColor: background,
                         //Customize the background color
@@ -125,6 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Wrap(
                   children: modes.map((mode) {
+
                     return Padding(
                       padding: const EdgeInsets.only(left: 4, right: 4),
                       child: ChoiceChip(
@@ -135,8 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         selected: false,
-                        onSelected: (bool selected) {
-                          selectedMode = mode;
+                        onSelected: (bool value) {
                         },
                         backgroundColor: background,
                         //Customize the background color
@@ -148,7 +151,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   }).toList(),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Get.to(()=> );
+                  },
                   child: const Text('Let\'s Go'),
                 ),
               ],
