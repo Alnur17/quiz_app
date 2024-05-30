@@ -119,10 +119,8 @@ class _SelectionBottomSheetScreenState
                         Get.snackbar(
                           'Error',
                           'Please select both category and mode',
-                          backgroundColor: justWhite,
-                          colorText: justBlack,
-                          overlayBlur: 0.1,
-                          overlayColor: background,
+                          backgroundColor: Theme.of(context).colorScheme.error,
+                          colorText: justWhite,
                         );
                       }
                     },

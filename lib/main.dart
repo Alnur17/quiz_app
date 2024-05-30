@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/controller/quiz_controller.dart';
-
 import 'Screens/home_screen.dart';
 
 void main() {
@@ -18,10 +18,19 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Quiz App',
       debugShowCheckedModeBanner: false,
+
+      /*themeMode: ThemeMode.system,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+          brightness: Brightness.light,
+          primarySwatch: Colors.blue,
+          useMaterial3: true
       ),
+      darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          primarySwatch: Colors.blue,
+          bottomSheetTheme: const BottomSheetThemeData(),
+          useMaterial3: true
+      ),*/
       home: HomeScreen(),
     );
   }
