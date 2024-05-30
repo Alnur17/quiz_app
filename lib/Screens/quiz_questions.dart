@@ -46,8 +46,9 @@ class _QuizQuestionsState extends State<QuizQuestions> {
         backgroundColor: background,
         title: const Text(
           'Quiz Questions',
-          style: styleBlackBold24,
+          style: styleWhiteBold24,
         ),
+
       ),
       body: ListView.builder(
         itemCount: widget.questions.length,
@@ -61,7 +62,7 @@ class _QuizQuestionsState extends State<QuizQuestions> {
               children: [
                 Text(
                   'Question ${index + 1}: ${question.question}',
-                  style: styleBlackBold20,
+                  style: styleWhiteBold20,
                 ),
                 const SizedBox(height: 8),
                 Column(
@@ -70,8 +71,11 @@ class _QuizQuestionsState extends State<QuizQuestions> {
                     return RadioListTile<String>(
                       title: Text(
                         option,
-                        style: styleBlackBold16,
+                        style: styleWhiteBold16,
                       ),
+                      activeColor: justWhite,
+
+                      tileColor: Colors.transparent,
                       value: option,
                       groupValue: selectedAnswers[index],
                       onChanged: (value) {

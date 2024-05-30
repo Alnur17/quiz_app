@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 50),
                 const Text(
                   textReadyFQuiz,
-                  style: styleBlackBold20,
+                  style: styleWhiteBold20,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 24, left: 50, right: 50),

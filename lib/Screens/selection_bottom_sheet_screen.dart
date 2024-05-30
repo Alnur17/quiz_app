@@ -30,7 +30,7 @@ class _SelectionBottomSheetScreenState
           children: [
             const Text(
               'Please select category',
-              style: styleBlackBold24,
+              style: styleWhiteBold24,
             ),
             const SizedBox(height: 12),
             Wrap(
@@ -71,7 +71,7 @@ class _SelectionBottomSheetScreenState
               padding: EdgeInsets.only(top: 12, bottom: 12),
               child: Text(
                 'Please select difficulty',
-                style: styleBlackBold24,
+                style: styleWhiteBold24,
               ),
             ),
             Wrap(
