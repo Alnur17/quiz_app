@@ -49,13 +49,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   textReadyFQuiz,
                   style: styleBlackBold20,
                 ),
-                const SizedBox(height: 24),
-                Expanded(
+                Padding(
+                  padding: const EdgeInsets.only(top: 24, left: 50, right: 50),
                   child: OutlinedButton(
                     onPressed: () {
                       showSelectionBottomSheet(context);
                     },
-                    style: OutlinedButton.styleFrom(backgroundColor: buttonColor),
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: buttonColor,
+                      fixedSize: const Size(double.maxFinite, 50),
+                    ),
                     child: const Text(
                       textStart,
                       style: styleBlackBold16,

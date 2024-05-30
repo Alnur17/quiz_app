@@ -30,7 +30,7 @@ class _SelectionBottomSheetScreenState
           children: [
             const Text(
               'Please select category',
-              style: styleBlackBold20,
+              style: styleBlackBold24,
             ),
             const SizedBox(height: 12),
             Wrap(
@@ -41,6 +41,7 @@ class _SelectionBottomSheetScreenState
                     label: Text(
                       category.name,
                       style: TextStyle(
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: selectedCategoryId == category.id
                             ? justBlack
@@ -70,7 +71,7 @@ class _SelectionBottomSheetScreenState
               padding: EdgeInsets.only(top: 12, bottom: 12),
               child: Text(
                 'Please select difficulty',
-                style: styleBlackBold20,
+                style: styleBlackBold24,
               ),
             ),
             Wrap(
@@ -81,6 +82,7 @@ class _SelectionBottomSheetScreenState
                     label: Text(
                       difficulty,
                       style: TextStyle(
+                        fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color:
                             selectedMode == difficulty ? justBlack : justBlack,
@@ -127,8 +129,9 @@ class _SelectionBottomSheetScreenState
                     style: ElevatedButton.styleFrom(
                       backgroundColor: buttonColor,
                       foregroundColor: justBlack,
+
                     ),
-                    child: const Text('Let\'s Go'),
+                    child: const Text('Let\'s Go',style: styleBlackBold16,),
                   ),
                 ),
                 const SizedBox(width: 12),
