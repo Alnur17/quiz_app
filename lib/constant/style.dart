@@ -39,3 +39,9 @@ const styleBlackBold16 = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.bold,
 );
+
+const styleDarkGreenBold16 = TextStyle(
+  color: darkGreen,
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+);

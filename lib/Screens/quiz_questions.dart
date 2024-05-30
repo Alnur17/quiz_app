@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:quiz_app/Screens/result_screen.dart';
 import 'package:quiz_app/constant/colors.dart';
 import 'package:quiz_app/constant/style.dart';
 import 'package:quiz_app/model/questions_model.dart';
@@ -15,6 +17,7 @@ class QuizQuestions extends StatefulWidget {
 class _QuizQuestionsState extends State<QuizQuestions> {
   // List to store selected answers for each question
   List<String?> selectedAnswers = [];
+
 // List to store shuffled options for each question
   List<List<String>> shuffledOptions = [];
 
@@ -32,10 +35,12 @@ class _QuizQuestionsState extends State<QuizQuestions> {
   }
 
   void _submitAnswers() {
-    // Handle the submission logic here
-    for (int i = 0; i < widget.questions.length; i++) {
-      print('Question ${i + 1}: ${selectedAnswers[i]}');
-    }
+    Get.to(
+      () => ResultScreen(
+        selectedAnswers: selectedAnswers,
+        questions: widget.questions,
+      ),
+    );
   }
 
   @override
@@ -48,7 +53,6 @@ class _QuizQuestionsState extends State<QuizQuestions> {
           'Quiz Questions',
           style: styleWhiteBold24,
         ),
-
       ),
       body: ListView.builder(
         itemCount: widget.questions.length,
@@ -74,7 +78,6 @@ class _QuizQuestionsState extends State<QuizQuestions> {
                         style: styleWhiteBold16,
                       ),
                       activeColor: justWhite,
-
                       tileColor: Colors.transparent,
                       value: option,
                       groupValue: selectedAnswers[index],

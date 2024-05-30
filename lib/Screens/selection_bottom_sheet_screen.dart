@@ -45,7 +45,7 @@ class _SelectionBottomSheetScreenState
                         fontWeight: FontWeight.bold,
                         color: selectedCategoryId == category.id
                             ? justBlack
-                            : justBlack,
+                            : justWhite,
                       ),
                     ),
                     selected: selectedCategoryId == category.id,
@@ -57,7 +57,7 @@ class _SelectionBottomSheetScreenState
                     selectedColor: buttonColor,
                     backgroundColor: selectedCategoryId == category.id
                         ? Colors.yellow.withOpacity(0.3)
-                        : justWhite,
+                        : background,
                   ),
                 );
               }).toList(),
@@ -85,7 +85,7 @@ class _SelectionBottomSheetScreenState
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
                         color:
-                            selectedMode == difficulty ? justBlack : justBlack,
+                            selectedMode == difficulty ? justBlack : justWhite,
                       ),
                     ),
                     selected: selectedMode == difficulty,
@@ -97,7 +97,7 @@ class _SelectionBottomSheetScreenState
                     selectedColor: buttonColor,
                     backgroundColor: selectedMode == difficulty
                         ? buttonColor
-                        : justWhite,
+                        : background,
                   ),
                 );
               }).toList(),
