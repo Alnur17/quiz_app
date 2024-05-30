@@ -26,6 +26,9 @@ class ResultScreen extends StatelessWidget {
           'Quiz Results',
           style: styleWhiteBold24,
         ),
+        iconTheme: const IconThemeData(
+          color: buttonColor, // Set the color of the back button
+        ),
       ),
       body: ListView.builder(
         itemCount: questions.length,
@@ -71,16 +74,26 @@ class ResultScreen extends StatelessWidget {
             onPressed: () {
               Get.to(() => QuizQuestions(questions: questions));
             },
-            style: ElevatedButton.styleFrom(backgroundColor: buttonColor,),
-            child: const Text('Restart',style: styleBlackBold16,),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: buttonColor,
+            ),
+            child: const Text(
+              'Restart',
+              style: styleBlackBold16,
+            ),
           ),
           const SizedBox(width: 8),
           ElevatedButton(
             onPressed: () {
               Get.to(() => HomeScreen());
             },
-            style: ElevatedButton.styleFrom(backgroundColor: buttonColor,),
-            child: const Text('Close',style: styleBlackBold16,),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: buttonColor,
+            ),
+            child: const Text(
+              'Close',
+              style: styleBlackBold16,
+            ),
           ),
         ],
       ),

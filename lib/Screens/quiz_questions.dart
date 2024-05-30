@@ -53,6 +53,9 @@ class _QuizQuestionsState extends State<QuizQuestions> {
           'Quiz Questions',
           style: styleWhiteBold24,
         ),
+        iconTheme: const IconThemeData(
+          color: buttonColor, // Set the color of the back button
+        ),
       ),
       body: ListView.builder(
         itemCount: widget.questions.length,

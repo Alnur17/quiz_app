@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(QuizController());
     return GetMaterialApp(
-      title: 'Quiz App',
+      title: 'Quiz',
       debugShowCheckedModeBanner: false,
 
       /*themeMode: ThemeMode.system,
