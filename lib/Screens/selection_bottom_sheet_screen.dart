@@ -77,7 +77,7 @@ class _SelectionBottomSheetScreenState
             Wrap(
               children: difficulties.map((difficulty) {
                 return Padding(
-                  padding: const EdgeInsets.only(left: 4,right: 4),
+                  padding: const EdgeInsets.only(left: 4, right: 4),
                   child: ChoiceChip(
                     label: Text(
                       difficulty,
@@ -95,9 +95,8 @@ class _SelectionBottomSheetScreenState
                       });
                     },
                     selectedColor: buttonColor,
-                    backgroundColor: selectedMode == difficulty
-                        ? buttonColor
-                        : background,
+                    backgroundColor:
+                        selectedMode == difficulty ? buttonColor : background,
                   ),
                 );
               }).toList(),
@@ -112,7 +111,7 @@ class _SelectionBottomSheetScreenState
                       if (selectedCategoryId != null && selectedMode != null) {
                         await quizController.fetchQuizData(
                             selectedCategoryId!, selectedMode!);
-                        Get.to(() => QuizQuestions(
+                        Get.off(() => QuizQuestions(
                             questions: quizController.questionList));
                       } else {
                         // Show a message to select both category and mode
@@ -127,9 +126,11 @@ class _SelectionBottomSheetScreenState
                     style: ElevatedButton.styleFrom(
                       backgroundColor: buttonColor,
                       foregroundColor: justBlack,
-
                     ),
-                    child: const Text('Let\'s Go',style: styleBlackBold16,),
+                    child: const Text(
+                      'Let\'s Go',
+                      style: styleBlackBold16,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 12),
@@ -139,7 +140,10 @@ class _SelectionBottomSheetScreenState
                     onPressed: () {
                       Get.back();
                     },
-                    style: ElevatedButton.styleFrom(backgroundColor: buttonColor,foregroundColor: justBlack),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: buttonColor,
+                      foregroundColor: justBlack,
+                    ),
                     child: const Icon(Icons.close),
                   ),
                 ),

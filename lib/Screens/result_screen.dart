@@ -66,13 +66,13 @@ class ResultScreen extends StatelessWidget {
           );
         },
       ),
-      //floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           ElevatedButton(
             onPressed: () {
-              Get.to(() => QuizQuestions(questions: questions));
+              Get.off(() => QuizQuestions(questions: questions));
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: buttonColor,
@@ -85,7 +85,7 @@ class ResultScreen extends StatelessWidget {
           const SizedBox(width: 8),
           ElevatedButton(
             onPressed: () {
-              Get.to(() => HomeScreen());
+              Get.offAll(() => HomeScreen());
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: buttonColor,
@@ -100,12 +100,3 @@ class ResultScreen extends StatelessWidget {
     );
   }
 }
-
-/*
-ElevatedButton(
-onPressed: () {
-Get.to(() => HomeScreen());
-},
-child: Text('Close'),
-),
-*/
