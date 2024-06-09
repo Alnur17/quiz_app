@@ -72,7 +72,7 @@ class ResultScreen extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: () {
-              Get.off(() => QuizQuestions(questions: questions));
+              Get.offAll(() => QuizQuestions(questions: questions));
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: buttonColor,
